@@ -2,14 +2,14 @@ def ciper(message)
   letters_to_convert = message.split(//)
   converted_message = ""
   letters_to_convert.each do |letter|
-    converted_letter = convert_letter(letter)
+    converted_letter = convert_letter(letter,3)
     converted_message.concat(converted_letter)
   end
   puts converted_message
 end
 
-def convert_letter(letter)
-  convert_letter = letter.ord - 3
+def convert_letter(letter,shift_factor)
+  convert_letter = letter.ord - shift_factor
   case 
   when letter.match?(/\s+/)
     convert_letter = letter
